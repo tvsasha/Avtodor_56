@@ -1,0 +1,55 @@
+﻿<Window x:Class="Avtodor_56.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Avtodor_56"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1500">
+    <Grid>
+        <ComboBox x:Name="cbFilterColumn" HorizontalAlignment="Left" Margin="731,27,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Employee Name" />
+            <ComboBoxItem Content="Client Name" />
+            <ComboBoxItem Content="Material Name" />
+        </ComboBox>
+
+        <TextBox Name="txtFilter" HorizontalAlignment="Left" Height="23" Margin="708,161,0,0" VerticalAlignment="Top" Width="120" />
+
+        <Button Content="Filter" HorizontalAlignment="Left" Margin="731,80,0,0" VerticalAlignment="Top" Width="75" Click="Filter_Click" />
+
+        <Button Content="Reset" HorizontalAlignment="Left" Margin="731,120,0,0" VerticalAlignment="Top" Width="75" Click="Reset_Click" />
+        <DataGrid x:Name="dgUnifiedData" Height="250" Width="1300" HorizontalAlignment="Left" AutoGenerateColumns="False" VerticalAlignment="Top" Margin="10,305,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding EmployeeID}" Header="Employee ID"/>
+                <DataGridTextColumn Binding="{Binding EmployeeFullName}" Header="Employee Name"/>
+                <DataGridTextColumn Binding="{Binding Position}" Header="Position"/>
+                <DataGridTextColumn Binding="{Binding EmployeePhone}" Header="Employee Phone"/>
+                <DataGridTextColumn Binding="{Binding ClientID}" Header="Client ID"/>
+                <DataGridTextColumn Binding="{Binding ClientFullName}" Header="Client Name"/>
+                <DataGridTextColumn Binding="{Binding ClientPhone}" Header="Client Phone"/>
+                <DataGridTextColumn Binding="{Binding Email}" Header="Client Email"/>
+                <DataGridTextColumn Binding="{Binding MaterialID}" Header="Material ID"/>
+                <DataGridTextColumn Binding="{Binding MaterialName}" Header="Material Name"/>
+                <DataGridTextColumn Binding="{Binding Unit}" Header="Unit"/>
+                <DataGridTextColumn Binding="{Binding UnitPrice}" Header="Unit Price"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox Name="oId" HorizontalAlignment="Left" Height="23" Margin="522,25,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="oD" HorizontalAlignment="Left" Height="23" Margin="522,80,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="oS" HorizontalAlignment="Left" Height="23" Margin="522,135,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="oC" HorizontalAlignment="Left" Height="23" Margin="522,190,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top"  Width="120" />
+
+        <Button Content="Add" HorizontalAlignment="Left" Margin="450,255,0,0" VerticalAlignment="Top" Width="75" Click="Add_Click" 
+               />
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="550,255,0,0" VerticalAlignment="Top" Width="75" Click="Delete_Click" 
+                />
+        <Button Content="Update" HorizontalAlignment="Left" Margin="650,255,0,0" VerticalAlignment="Top" Width="75" Click="Update_Click" 
+                />
+        <Button Content="Convert to PDF" HorizontalAlignment="Left" Margin="750,255,0,0" VerticalAlignment="Top" Width="90" Click="Convert_Click" 
+        />
+    </Grid>
+</Window>
